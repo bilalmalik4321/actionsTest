@@ -1,4 +1,4 @@
-name: MasterDeployCI
+name: audit CI
 on:
   push:
     branches:
