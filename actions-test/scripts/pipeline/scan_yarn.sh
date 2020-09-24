@@ -11,7 +11,7 @@ search_term=", [0-9]{1,6} high)"
 
 if grep -REo "$only_high_vulnerabilities" yarn_install_output.txt
 then
-  if ! grep -o "found 0 vulnerabilities" yarn_install_output.txt
+  if ! grep -o "0 vulnerabilities found" yarn_install_output.txt
   then
     echo "Yes, security vulnerabilities found."
     exit 1
