@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import SwipeableViews from "react-swipeable-views";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const styles = {
+  slide: {
+    padding: 15,
+    minHeight: 100,
+    color: "#fff",
+  },
+  slide1: {
+    background: "#FEA900",
+  },
+  slide2: {
+    background: "#B3DC4A",
+  },
+  slide3: {
+    background: "#6AC0FF",
+  },
+};
+
+const App = () => (
+  <SwipeableViews>
+    <div style={Object.assign({}, styles.slide, styles.slide1)}>slide n°1</div>
+    <div style={Object.assign({}, styles.slide, styles.slide2)}>slide n°2</div>
+    <div style={Object.assign({}, styles.slide, styles.slide3)}>slide n°3</div>
+  </SwipeableViews>
+);
 
 export default App;
