@@ -1,0 +1,15 @@
+name: CI
+on:
+  push:
+    branches: [master]
+jobs:
+  build:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install # will run `yarn install` command
+      - name: Scan for Vulnerabilities
+        run: bash actions-test/scripts/pipeline/scan_yarn.sh
