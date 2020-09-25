@@ -11,7 +11,5 @@ jobs:
       - uses: borales/actions-yarn@v2.0.0
         with:
           cmd: install # will run `yarn install` command
-      - name: Give access to files
-        run: rm -rf /Users/$USER/Library/Caches/Yarn/ && mkdir -p /Users/$USER/Library/Caches/Yarn/
       - name: Scan for Vulnerabilities
         run: bash actions-test/scripts/pipeline/scan_yarn.sh
