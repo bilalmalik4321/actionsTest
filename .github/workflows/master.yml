@@ -4,7 +4,7 @@ on:
     branches: [master]
 
 jobs:
-  build-and-deploy:
+  deploy-to-gh-pages:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -18,9 +18,4 @@ jobs:
           yarn run build
 
       - name: Deploy 🚀
-        uses: actionsTest/github-pages-deploy-action@3.6.1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: build # The folder the action should deploy.
-          CLEAN: true # Automatically remove deleted files from the deploy branch
+        run: yarn run deploy
